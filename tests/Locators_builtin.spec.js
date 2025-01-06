@@ -27,11 +27,11 @@ await page.getByPlaceholder('Password').fill('admin123')
 await page.getByRole('button', {type: 'submit'}).click()
 
 //page.getByText() - to locate by text content.
-await expect(await page.getByText('Dragan Petrovski')).toBeVisible()
+//await expect(await page.getByText('Dragan Petrovski')).toBeVisible()
 
 //used with xpath
-//const name = await page.locator('//span[@class="oxd-userdropdown-tab"]').textContent()
+const name=await page.locator("//p[@class='oxd-userdropdown-name']").textContent()
 
-//await expect(await page.getByText(name)).toBeVisible()
+await expect(await page.getByText(name)).toBeVisible()
 
 })
